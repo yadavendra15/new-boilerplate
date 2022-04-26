@@ -50,9 +50,9 @@ const render = messages => {
   ReactDOM.render(
     <Provider store={store}>
       <LanguageProvider messages={messages}>
-        <ConnectedRouter history={history}>
+        {/* <ConnectedRouter history={history}> */}
           <App />
-        </ConnectedRouter>
+        {/* </ConnectedRouter> */}
       </LanguageProvider>
     </Provider>,
     MOUNT_NODE,

@@ -9,7 +9,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Routes, BrowserRouter } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
@@ -38,11 +38,13 @@ export default function App() {
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
       <Header />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
-        <Route path="" component={NotFoundPage} />
-      </Switch>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={HomePage} />
+          <Route path="/features" element={FeaturePage} />
+          <Route path="" element={NotFoundPage} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
       <GlobalStyle />
     </AppWrapper>
